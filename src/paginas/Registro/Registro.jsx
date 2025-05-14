@@ -1,24 +1,22 @@
+// src/paginas/Registro/Registro.jsx
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import './Registro.css'; // tu propio CSS
+import { useNavigate } from 'react-router-dom';
+import './Registro.css';
+import { registrarUsuario } from '../../api/firebaseService';
 
 function Registro() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
-  const handleRegister = () => {
-    const users = JSON.parse(localStorage.getItem('users')) || [];
-
-    if (users.find(user => user.email === email)) {
-      alert('El usuario ya existe');
-      return;
+  const handleRegister = async () => {
+    try {
+      await registrarUsuario(email, password);
+      alert('¡Registrado correctamente!');
+      navigate('/login');
+    } catch (error) {
+      alert(error.message);
     }
-
-    users.push({ email, password });
-    localStorage.setItem('users', JSON.stringify(users));
-    alert('¡Registrado correctamente!');
-    navigate('/login');
   };
 
   return (
@@ -39,8 +37,10 @@ function Registro() {
         />
         <button onClick={handleRegister}>Registrarse</button>
         <div className="switch-auth">
-          ¿Ya tienes cuenta?
-          <Link to="/login">Inicia sesión</Link>
+          ¿Ya tienes cuenta?{' '}
+          <span onClick={() => navigate('/login')} style={{ color: 'green', cursor: 'pointer' }}>
+            Inicia sesión
+          </span>
         </div>
       </div>
     </div>

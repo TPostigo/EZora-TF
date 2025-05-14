@@ -1,0 +1,54 @@
+/* src/paginas/EZStart/partes/NavegacionInternet/NavegacionInternet.css */
+
+.navegacion-container {
+  padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: 'Montserrat', sans-serif;
+  background-color: white;
+  color: #125961;
+}
+
+.navegacion-container h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: #125961;
+  border-bottom: 2px solid #cf9f59;
+  padding-bottom: 0.5rem;
+}
+
+.navegacion-container p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.navegacion-section {
+  margin-bottom: 2.5rem;
+  padding: 1.5rem;
+  border-left: 4px solid #cf9f59;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.navegacion-section h2 {
+  font-size: 1.4rem;
+  color: #125961;
+  margin-bottom: 0.6rem;
+}
+
+.navegacion-section p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+.navegacion-section ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-top: 1rem;
+}
+
+.navegacion-section ul li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}

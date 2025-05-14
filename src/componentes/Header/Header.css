@@ -9,6 +9,7 @@
   gap: 2rem;
   padding: 0 2rem;
   box-sizing: border-box;
+  border-bottom: 2px solid #cf9f59;
 }
 
 /* Botones del header */
@@ -115,6 +116,9 @@
   color: #125961;
   cursor: pointer;
   transition: all 0.2s ease;
+  display: flex;
+  justify-content: space-around;
+  gap: 4px;
 }
 
 .perfil-item:hover {
@@ -122,3 +126,11 @@
   color: white;
 }
 
+#cs:hover{
+  color: rgb(220, 54, 54);
+  text-decoration: underline;
+}
+
+.CS{
+  width: 20px;
+}

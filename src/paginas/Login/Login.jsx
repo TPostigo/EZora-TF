@@ -1,21 +1,26 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import './Login.css'; // tu propio CSS
+import { useNavigate } from 'react-router-dom';
+import './Login.css';
+import { loginUsuario } from '../../api/firebaseService';
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
+  const [error, setError] = useState('');
 
-  const handleLogin = () => {
-    const users = JSON.parse(localStorage.getItem('users')) || [];
-    const userFound = users.find(user => user.email === email && user.password === password);
+  const handleLogin = async () => {
+    try {
+      const usuario = await loginUsuario(email, password);
 
-    if (userFound) {
-      localStorage.setItem('currentUser', JSON.stringify(userFound));
+      // Guardamos el token y los datos del usuario
+      localStorage.setItem('authToken', 'true');
+      localStorage.setItem('user', JSON.stringify(usuario));
+
       navigate('/homepage');
-    } else {
-      alert('Usuario o contraseña incorrectos');
+    } catch (err) {
+      console.error(err);
+      setError('Correo o contraseña incorrectos');
     }
   };
 
@@ -23,6 +28,9 @@ function Login() {
     <div className="auth-container">
       <div className="auth-card">
         <h2>Iniciar Sesión</h2>
+
+        {error && <p className="error-message">{error}</p>}
+
         <input
           type="email"
           placeholder="Correo electrónico"
@@ -36,9 +44,15 @@ function Login() {
           onChange={(e) => setPassword(e.target.value)}
         />
         <button onClick={handleLogin}>Entrar</button>
+
         <div className="switch-auth">
-          ¿No tienes cuenta?
-          <Link to="/registro">Regístrate</Link>
+          ¿No tienes cuenta?{' '}
+          <span
+            style={{ color: 'green', cursor: 'pointer' }}
+            onClick={() => navigate('/registro')}
+          >
+            Regístrate
+          </span>
         </div>
       </div>
     </div>

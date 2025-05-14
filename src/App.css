@@ -37,3 +37,10 @@
     transform: rotate(360deg);
   }
 }
+.auth-content {
+  margin-top: 100px; /* para dejar espacio al header */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 100px);
+}

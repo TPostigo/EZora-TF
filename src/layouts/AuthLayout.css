@@ -1,0 +1,5 @@
+.auth-content {
+    background-color: white;
+    min-height: 88vh; /* Relleno restante si el header ocupa 12vh */
+  }
+  
