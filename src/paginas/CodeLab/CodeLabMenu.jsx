@@ -19,7 +19,7 @@ function CodeLabMenu() {
         <div
           key={lang.id}
           className="codelab-box"
-          style={{ backgroundImage: `url(${lang.imagen})` }}
+          style={{ '--bg-image': `url(${lang.imagen})` }}
           onClick={() => navigate(lang.ruta)}
         >
           <div className="codelab-title">{lang.titulo}</div>

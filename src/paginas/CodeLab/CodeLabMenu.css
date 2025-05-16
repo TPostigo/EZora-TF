@@ -44,3 +44,70 @@
   text-align: center;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
+/* src/paginas/CodeLab/CodeLabMenu.css */
+
+.codelab-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  padding: 2rem;
+  background-color: white;
+  min-height: 100vh;
+  justify-items: center;
+}
+
+.codelab-box {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  height: 240px;
+  border: 2px solid #cf9f59;
+  border-radius: 12px;
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background-color: #ffffff;
+}
+
+/* Fondo dinámico con ::before */
+.codelab-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+  transition: transform 0.3s ease;
+}
+
+/* Zoom en hover */
+.codelab-box:hover::before {
+  transform: scale(1.1);
+}
+
+/* Título sobre la imagen */
+.codelab-title {
+  position: relative;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 0.6rem 1rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #125961;
+  border-radius: 6px;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 1rem;
+}
+
+/* Borde al pasar el ratón */
+.codelab-box:hover {
+  border-color: #125961;
+}
