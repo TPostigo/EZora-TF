@@ -1,0 +1,46 @@
+/* src/paginas/CodeLab/CodeLabMenu.css */
+
+.codelab-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Siempre 2 columnas */
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 80vh; /* Ocupa gran parte de la pantalla */
+  background-color: white;
+}
+
+.codelab-box {
+  position: relative;
+  height: 280px; /* Más alto para destacar */
+  background-size: cover;
+  background-position: center;
+  border: 2.5px solid #125961;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem;
+  overflow: hidden;
+  background-color: white;
+}
+
+.codelab-box:hover {
+  transform: scale(1.03);
+  border-color: #cf9f59;
+}
+
+.codelab-title {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 0.8rem 1rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #125961;
+  border-radius: 8px;
+  font-family: 'Montserrat', sans-serif;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}

@@ -7,6 +7,7 @@ import AuthLayout from './layouts/AuthLayout';
 import ProtectedRoute from './componentes/ProtectedRoutes';
 import Header from './componentes/Header/Header';
 import EZStartMenu from './paginas/EZStart/EZStartMenu';
+import CodeLabMenu from './paginas/CodeLab/CodeLabMenu';
 import UsoSistemaOperativo from './paginas/EZStart/partes/UsoSistemaOperativo/UsoSistemaOperativo';
 import InstalacionDeProgramas from './paginas/EZStart/partes/InstalacionDeProgramas/InstalacionDeProgramas';
 import NavegacionInternet from './paginas/EZStart/partes/NavegacionInternet/NavegacionInternet';
@@ -111,6 +112,18 @@ function App() {
             </>
           }
         />
+        <Route
+          path="/codelab"
+          element={
+            <>
+              <Header />
+              <ProtectedRoute>
+                <CodeLabMenu />
+              </ProtectedRoute>
+            </>
+          }
+        />
+
       </Routes>
     </Router>
   );

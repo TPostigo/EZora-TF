@@ -1,51 +1,43 @@
+/* src/paginas/EZStart/EZStartMenu.css */
+
 .ezstart-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem; /* Menor separación entre columnas */
-    padding: 2rem;
-    background-color: white;
-    min-height: 80vh;
-    justify-items: center;
-  }
-  
-  .ezstart-box {
-    width: 100%;
-    max-width: 450px;
-    height: 180px;
-    background-size: cover;
-    background-position: center;
-    border: 2.5px solid #125961;
-    border-radius: 12px;
-    position: relative;
-    cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: all 0.3s ease;
-  }
-  
-  .ezstart-box:hover {
-    background-color: #cf9f59;
-    transform: scale(1.02);
-  }
-  
-  .ezstart-title {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(18, 89, 97, 0.85);
-    color: white;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
-    padding: 10px;
-    font-size: 18px;
-    text-align: center;
-    letter-spacing: 0.5px;
-    transition: color 0.3s ease;
-  }
-  
-  .ezstart-box:hover .ezstart-title {
-    color: #125961;
-    background: #cf9f59;
-  }
-  
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: white;
+}
+
+.ezstart-box {
+  position: relative;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  border: 2px solid #cf9f59;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem;
+  background-color: white;
+}
+
+.ezstart-box:hover {
+  transform: scale(1.03);
+  border-color: #125961;
+}
+
+.ezstart-title {
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #125961;
+  border-radius: 6px;
+  font-family: 'Montserrat', sans-serif;
+  width: 100%;
+  text-align: center;
+}
