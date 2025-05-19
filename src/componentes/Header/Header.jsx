@@ -65,7 +65,7 @@ function Header() {
         </button>
         {mostrarMenuPerfil && (
           <div className="perfil-menu">
-            <button className="perfil-item" onClick={() => navigate('/usuario')}>Mi Info</button>
+            <button className="perfil-item" onClick={() => navigate('/perfil')}>Mi Info</button>
             <button className="perfil-item" id='cs' onClick={handleLogout}>Cerrar Sesión
                <img src={cerrarSesion} alt="cerrarSesion" className="CS" /> 
             </button>

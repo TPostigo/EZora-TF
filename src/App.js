@@ -14,6 +14,8 @@ import NavegacionInternet from './paginas/EZStart/partes/NavegacionInternet/Nave
 import CorreoElectronico from './paginas/EZStart/partes/CorreoElectronico/CorreoElectronico';
 import SeguridadEnLaRed from './paginas/EZStart/partes/SeguridadEnLaRed/SeguridadEnLaRed';
 import HerramientasDeOficina from './paginas/EZStart/partes/HerramientasDeOficina/HerramientasDeOficina';
+import PerfilUsuario from './paginas/Perfil/PerfilUsuario';
+import SkillShop from './paginas/SkillShop/SkillShop';
 
 
 function App() {
@@ -119,6 +121,28 @@ function App() {
               <Header />
               <ProtectedRoute>
                 <CodeLabMenu />
+              </ProtectedRoute>
+            </>
+          }
+        />
+        <Route
+          path="/perfil"
+          element={
+            <>
+              <Header />
+              <ProtectedRoute>
+                <PerfilUsuario />
+              </ProtectedRoute>
+            </>
+          }
+        />
+        <Route
+          path="/skillshop"
+          element={
+            <>
+              <Header />
+              <ProtectedRoute>
+                <SkillShop />
               </ProtectedRoute>
             </>
           }
