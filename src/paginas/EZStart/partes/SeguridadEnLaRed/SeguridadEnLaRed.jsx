@@ -6,34 +6,93 @@ function SeguridadEnLaRed() {
   return (
     <div className="seguridad-container">
       <h1>Seguridad básica en la red</h1>
-      <p>Protégete mientras navegas por internet con estos consejos y prácticas recomendadas:</p>
+      <p>
+        Protégete mientras navegas por internet con estos consejos sencillos y útiles. Aprende a crear contraseñas seguras, evitar estafas y mantener tu equipo protegido.
+      </p>
 
       <div className="seguridad-section">
-        <h2>1. Contraseñas seguras</h2>
+        <h2>1. Usa contraseñas seguras</h2>
         <p>
-          Usa contraseñas largas, con combinación de letras, números y símbolos. Evita usar datos personales como fechas de nacimiento.
+          Las contraseñas deben ser largas y difíciles de adivinar. Recomendaciones:
         </p>
+        <ul>
+          <li>Usa una combinación de letras mayúsculas, minúsculas, números y símbolos. Ejemplo: <code>PeRr0!2023*</code></li>
+          <li>No uses tu nombre, fecha de nacimiento ni palabras simples como "123456".</li>
+          <li>Si puedes, utiliza un gestor de contraseñas para guardar todas tus claves de forma segura.</li>
+        </ul>
+        <img
+          src="/imagenes/contraseñas-seguras.png"
+          alt="Ejemplo de contraseña segura"
+          className="seguridad-imagen"
+        />
       </div>
 
       <div className="seguridad-section">
         <h2>2. No compartas información sensible</h2>
         <p>
-          Nunca envíes tus datos personales o bancarios por correo electrónico o redes sociales. Verifica siempre el sitio web antes de introducir datos importantes.
+          Nunca compartas datos personales por internet, como tu DNI, número de cuenta o dirección, especialmente si no estás seguro del sitio o la persona.
         </p>
+        <ul>
+          <li>No envíes información por correo electrónico o redes sociales.</li>
+          <li>Asegúrate de que el sitio web comience por <strong>https://</strong> y tenga un candado 🔒.</li>
+          <li>Desconfía si alguien te pide códigos, contraseñas o datos bancarios.</li>
+        </ul>
+        <img
+          src="/imagenes/informacion-sensible.png"
+          alt="Ejemplo de sitio seguro y no seguro"
+          className="seguridad-imagen"
+        />
       </div>
 
       <div className="seguridad-section">
         <h2>3. Evita correos falsos (phishing)</h2>
         <p>
-          Si recibes un correo sospechoso que solicita datos o incluye enlaces extraños, no hagas clic. Comprueba siempre la dirección del remitente.
+          El phishing es un tipo de engaño donde alguien se hace pasar por una empresa o banco para robarte datos.
         </p>
+        <ul>
+          <li>No hagas clic en enlaces de correos sospechosos o que te piden datos urgentes.</li>
+          <li>Revisa siempre la dirección del remitente (por ejemplo: <code>banco@seguro.com</code> vs <code>banco123@nooficial.com</code>).</li>
+          <li>Si tienes dudas, entra a la página escribiendo tú mismo la dirección en el navegador.</li>
+        </ul>
+        <img
+          src="/imagenes/phishing-correo.png"
+          alt="Ejemplo de un correo de phishing"
+          className="seguridad-imagen"
+        />
       </div>
 
       <div className="seguridad-section">
-        <h2>4. Utiliza antivirus y actualiza el sistema</h2>
+        <h2>4. Instala antivirus y mantén tu equipo actualizado</h2>
         <p>
-          Instala un antivirus confiable y mantén tu sistema operativo actualizado. Esto reduce las posibilidades de sufrir ataques o virus.
+          Un antivirus protege tu ordenador frente a virus y amenazas. Además, es importante mantener actualizado el sistema operativo y los programas.
         </p>
+        <ul>
+          <li>En Windows puedes usar <strong>Windows Defender</strong>, que ya viene incluido.</li>
+          <li>También existen otros antivirus gratuitos como <strong>Avast</strong> o <strong>AVG</strong>.</li>
+          <li>Activa las actualizaciones automáticas del sistema para tener siempre la última protección.</li>
+        </ul>
+        <img
+          src="/imagenes/antivirus-actualizacion.png"
+          alt="Antivirus y actualizaciones del sistema"
+          className="seguridad-imagen"
+        />
+      </div>
+
+      <div className="seguridad-section">
+        <h2>5. Usa el sentido común</h2>
+        <p>
+          A veces, el mejor antivirus es la precaución. Si algo parece sospechoso, es mejor no hacer clic ni contestar.
+        </p>
+        <ul>
+          <li>No descargues archivos de páginas que no conoces.</li>
+          <li>No creas todo lo que lees en internet. Verifica en varias fuentes.</li>
+          <li>Pregunta a alguien de confianza si tienes dudas antes de continuar.</li>
+        </ul>
+        <img
+          src="/imagenes/sentido-comun.png"
+          alt="Recomendación general de precaución"
+          className="seguridad-imagen"
+        />
       </div>
     </div>
   );

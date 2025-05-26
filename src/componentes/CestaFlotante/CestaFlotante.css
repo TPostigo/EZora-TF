@@ -1,0 +1,62 @@
+.cesta-flotante-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cesta-flotante {
+  background: #fff;
+  width: 320px;
+  height: 100%;
+  border-left: 2px solid #cf9f59;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
+  padding: 1.5rem;
+  font-family: 'Montserrat', sans-serif;
+  overflow-y: auto;
+  position: relative;
+}
+
+.cesta-cerrar {
+  background: transparent;
+  border: none;
+  color: #125961;
+  font-weight: bold;
+  font-size: 1rem;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.cesta-lista {
+  list-style: none;
+  padding: 0;
+  margin-top: 3rem;
+}
+
+.cesta-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.cesta-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.cesta-info {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+}
+

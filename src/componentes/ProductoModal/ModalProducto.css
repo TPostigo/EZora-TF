@@ -1,0 +1,98 @@
+.modal-producto-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-producto-contenido {
+  background-color: white;
+  border: 2px solid #cf9f59;
+  border-radius: 12px;
+  padding: 2rem;
+  width: 95%;
+  max-width: 700px;
+  font-family: 'Montserrat', sans-serif;
+  position: relative;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.modal-producto-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-producto-imagen {
+  flex: 1 1 350px;
+  max-width: 400px;
+  height: 300px;
+  object-fit: contain;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  background-color: white;
+  display: block;
+  margin: 0 auto;
+}
+
+.modal-producto-info {
+  flex: 1 1 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  min-width: 240px;
+}
+
+
+.modal-producto-info h2 {
+  margin: 0;
+  color: #125961;
+}
+
+.modal-producto-info p {
+  margin: 0;
+  color: #333;
+}
+
+.modal-producto-precio {
+  font-weight: bold;
+  color: #cf9f59;
+  font-size: 1.5rem;
+}
+
+.modal-producto-boton {
+  background-color: white;
+  border: 2px solid #125961;
+  color: #125961;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: start;
+}
+
+.modal-producto-boton:hover {
+  background-color: #125961;
+  color: white;
+}
+
+.modal-producto-cerrar {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #125961;
+  cursor: pointer;
+}
