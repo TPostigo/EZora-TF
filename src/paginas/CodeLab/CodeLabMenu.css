@@ -1,58 +1,14 @@
-/* src/paginas/CodeLab/CodeLabMenu.css */
-
-.codelab-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Siempre 2 columnas */
-  gap: 2rem;
-  padding: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  min-height: 80vh; /* Ocupa gran parte de la pantalla */
-  background-color: white;
-}
-
-.codelab-box {
-  position: relative;
-  height: 280px; /* Más alto para destacar */
-  background-size: cover;
-  background-position: center;
-  border: 2.5px solid #125961;
-  border-radius: 14px;
-  cursor: pointer;
-  transition: transform 0.3s ease, border-color 0.3s ease;
-  display: flex;
-  align-items: flex-end;
-  padding: 1rem;
-  overflow: hidden;
-  background-color: white;
-}
-
-.codelab-box:hover {
-  transform: scale(1.03);
-  border-color: #cf9f59;
-}
-
-.codelab-title {
-  background-color: rgba(255, 255, 255, 0.9);
-  padding: 0.8rem 1rem;
-  font-size: 1.3rem;
-  font-weight: bold;
-  color: #125961;
-  border-radius: 8px;
-  font-family: 'Montserrat', sans-serif;
-  width: 100%;
-  text-align: center;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-}
-/* src/paginas/CodeLab/CodeLabMenu.css */
+/* CodeLabMenu.css */
 
 .codelab-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
+  gap: 2rem;
   padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 80vh;
   background-color: white;
-  min-height: 100vh;
   justify-items: center;
 }
 
@@ -60,7 +16,7 @@
   position: relative;
   width: 100%;
   max-width: 500px;
-  height: 240px;
+  height: 260px;
   border: 2px solid #cf9f59;
   border-radius: 12px;
   cursor: pointer;
@@ -73,7 +29,7 @@
   background-color: #ffffff;
 }
 
-/* Fondo dinámico con ::before */
+/* Imagen de fondo dinámica */
 .codelab-box::before {
   content: "";
   position: absolute;
@@ -88,12 +44,15 @@
   transition: transform 0.3s ease;
 }
 
-/* Zoom en hover */
 .codelab-box:hover::before {
   transform: scale(1.1);
 }
 
-/* Título sobre la imagen */
+.codelab-box:hover {
+  transform: scale(1.03);
+  border-color: #125961;
+}
+
 .codelab-title {
   position: relative;
   z-index: 1;
@@ -105,9 +64,44 @@
   border-radius: 6px;
   font-family: 'Montserrat', sans-serif;
   margin-bottom: 1rem;
+  text-align: center;
+  width: 90%;
 }
 
-/* Borde al pasar el ratón */
-.codelab-box:hover {
-  border-color: #125961;
+/* Responsive: tablet */
+@media (max-width: 768px) {
+  .codelab-container {
+    grid-template-columns: 1fr;
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .codelab-box {
+    height: 220px;
+    max-width: 90%;
+  }
+
+  .codelab-title {
+    font-size: 1.15rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* Responsive: móvil */
+@media (max-width: 480px) {
+  .codelab-container {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .codelab-box {
+    height: 200px;
+    max-width: 100%;
+    padding: 0.5rem;
+  }
+
+  .codelab-title {
+    font-size: 1rem;
+    padding: 0.4rem 0.8rem;
+  }
 }

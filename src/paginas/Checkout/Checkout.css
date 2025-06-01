@@ -1,0 +1,118 @@
+.checkout-container {
+  max-width: 600px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', sans-serif;
+  box-sizing: border-box;
+}
+
+.checkout-container h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #125961;
+}
+
+.checkout-summary {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.checkout-summary p {
+  font-size: 1.1rem;
+  color: #555;
+  margin: 0;
+}
+
+.checkout-summary h3 {
+  font-size: 2rem;
+  color: #125961;
+  margin-top: 0.3rem;
+}
+
+.checkout-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.formulario-pago label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.95rem;
+  color: #444;
+  gap: 0.3rem;
+}
+
+.formulario-pago input {
+  padding: 0.65rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: border-color 0.2s;
+}
+
+.formulario-pago input:focus {
+  outline: none;
+  border-color: #125961;
+}
+
+.formulario-fila {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.formulario-fila label {
+  flex: 1 1 100%;
+}
+
+/* Estilo para inputs en fila más anchos en pantallas grandes */
+@media (min-width: 600px) {
+  .formulario-fila label {
+    flex: 1;
+  }
+}
+
+.boton-pago {
+  background-color: #125961;
+  color: white;
+  padding: 0.9rem 1.8rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  border: 2px solid #cf9f59;
+  margin: 1.5rem auto 0;
+  display: block;
+}
+
+.boton-pago:hover {
+  background-color: #cf9f59;
+  border: 2.5px solid #125961;
+}
+
+/* Responsive para móvil */
+@media (max-width: 480px) {
+  .checkout-container {
+    padding: 1.5rem 1rem;
+  }
+
+  .checkout-container h2 {
+    font-size: 1.6rem;
+  }
+
+  .checkout-summary p,
+  .checkout-summary h3 {
+    font-size: 1rem;
+  }
+
+  .boton-pago {
+    font-size: 1rem;
+    padding: 0.8rem 1.2rem;
+  }
+}

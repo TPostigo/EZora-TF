@@ -1,6 +1,11 @@
 // src/paginas/EZStart/partes/SeguridadEnLaRed/SeguridadEnLaRed.jsx
 import React from 'react';
 import './SeguridadEnLaRed.css';
+import contSeg from './img/contSeg.png';
+import sitSeg from './img/sitSeg.png';
+import corrPhy from './img/corrPhy.png';
+import antiVi from './img/antiVi.png';
+import seguri from './img/seguri.png';
 
 function SeguridadEnLaRed() {
   return (
@@ -21,7 +26,7 @@ function SeguridadEnLaRed() {
           <li>Si puedes, utiliza un gestor de contraseñas para guardar todas tus claves de forma segura.</li>
         </ul>
         <img
-          src="/imagenes/contraseñas-seguras.png"
+          src={contSeg}
           alt="Ejemplo de contraseña segura"
           className="seguridad-imagen"
         />
@@ -38,7 +43,7 @@ function SeguridadEnLaRed() {
           <li>Desconfía si alguien te pide códigos, contraseñas o datos bancarios.</li>
         </ul>
         <img
-          src="/imagenes/informacion-sensible.png"
+          src={sitSeg}
           alt="Ejemplo de sitio seguro y no seguro"
           className="seguridad-imagen"
         />
@@ -55,7 +60,7 @@ function SeguridadEnLaRed() {
           <li>Si tienes dudas, entra a la página escribiendo tú mismo la dirección en el navegador.</li>
         </ul>
         <img
-          src="/imagenes/phishing-correo.png"
+          src={corrPhy}
           alt="Ejemplo de un correo de phishing"
           className="seguridad-imagen"
         />
@@ -72,7 +77,7 @@ function SeguridadEnLaRed() {
           <li>Activa las actualizaciones automáticas del sistema para tener siempre la última protección.</li>
         </ul>
         <img
-          src="/imagenes/antivirus-actualizacion.png"
+          src={antiVi}
           alt="Antivirus y actualizaciones del sistema"
           className="seguridad-imagen"
         />
@@ -89,7 +94,7 @@ function SeguridadEnLaRed() {
           <li>Pregunta a alguien de confianza si tienes dudas antes de continuar.</li>
         </ul>
         <img
-          src="/imagenes/sentido-comun.png"
+          src={seguri}
           alt="Recomendación general de precaución"
           className="seguridad-imagen"
         />

@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+.jsconsole-container {
+  max-width: 520px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: #FFFEFF;
+  border: 1px solid #DCAE4A;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(220, 174, 74, 0.1);
+  font-family: 'Montserrat', sans-serif;
+}
+
+.jsconsole-title {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #116864;
+  border-bottom: 1px solid #DCAE4A;
+  padding-bottom: 0.5rem;
+}
+
+.jsconsole-input {
+  width: 100%;
+  min-height: 140px;
+  font-size: 0.95rem;
+  font-family: 'Courier New', monospace;
+  padding: 0.8rem;
+  border: 1px solid #DCAE4A;
+  border-radius: 8px;
+  background-color: #fff;
+  color: #333;
+  resize: vertical;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.jsconsole-input:focus {
+  border-color: #116864;
+  box-shadow: 0 0 0 2px rgba(17, 104, 100, 0.15);
+}
+
+.jsconsole-actions {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.jsconsole-button {
+  background-color: #116864;
+  color: #FFFEFF;
+  font-weight: bolder;
+  border: 1px solid #DCAE4A;
+  padding: 0.5rem 1.2rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
+  transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out, border-color 0.1s ease-in-out, transform 0.1s;
+}
+
+.jsconsole-button:hover {
+  background-color: #DCAE4A;
+  color: #116864;
+  border-color: #116864;
+  transform: scale(1.03);
+}
+
+.jsconsole-label {
+  margin-top: 1.5rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #116864;
+  margin-bottom: 0.5rem;
+}
+
+.jsconsole-output {
+  background-color: #fffceb;
+  border: 1px solid #DCAE4A;
+  padding: 0.9rem;
+  min-height: 60px;
+  white-space: pre-wrap;
+  font-family: 'Courier New', monospace;
+  color: #222;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(220, 174, 74, 0.2);
+}

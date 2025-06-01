@@ -1,5 +1,3 @@
-/* src/paginas/EZStart/EZStartMenu.css */
-
 .ezstart-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -25,7 +23,6 @@
   background-color: #ffffff;
 }
 
-/* Fondo con imagen */
 .ezstart-box::before {
   content: "";
   position: absolute;
@@ -62,4 +59,38 @@
   font-family: 'Montserrat', sans-serif;
   width: 100%;
   text-align: center;
+}
+
+/* 📱 Responsivo: tablet y móvil */
+@media (max-width: 768px) {
+  .ezstart-container {
+    grid-template-columns: 1fr;
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .ezstart-box {
+    height: 180px;
+    padding: 0.8rem;
+  }
+
+  .ezstart-title {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .ezstart-container {
+    padding: 1rem;
+  }
+
+  .ezstart-box {
+    height: 160px;
+    padding: 0.6rem;
+  }
+
+  .ezstart-title {
+    font-size: 1rem;
+    padding: 0.4rem 0.8rem;
+  }
 }

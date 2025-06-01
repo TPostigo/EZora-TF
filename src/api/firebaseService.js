@@ -1,16 +1,19 @@
 // src/api/firebaseService.js
 import { doc, setDoc, getDoc } from 'firebase/firestore';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
-import { db, auth } from '../firebaseConfig'; // Asegúrate de que auth y db se exporten desde firebaseConfig.js
+import { db, auth } from '../firebaseConfig';
 
-// Registrar un nuevo usuario con Firebase Auth y guardar su info en Firestore
+// Registrar un nuevo usuario
 export const registrarUsuario = async (email, password) => {
   try {
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
     const user = userCredential.user;
 
-    // Guardar info adicional en Firestore (por ejemplo, el email)
+    // Guardar info del usuario
     await setDoc(doc(db, 'usuarios', user.uid), { email });
+
+    // 🛒 Crear cesta vacía
+    await setDoc(doc(db, 'cestas', user.uid), { productos: [] });
 
     return user;
   } catch (error) {
@@ -19,13 +22,13 @@ export const registrarUsuario = async (email, password) => {
   }
 };
 
-// Iniciar sesión con Firebase Auth
+// Iniciar sesión
 export const loginUsuario = async (email, password) => {
   try {
     const userCredential = await signInWithEmailAndPassword(auth, email, password);
     const user = userCredential.user;
 
-    // Opcional: obtener más datos del usuario desde Firestore
+    // Obtener información adicional del usuario desde Firestore
     const userDoc = await getDoc(doc(db, 'usuarios', user.uid));
     if (!userDoc.exists()) throw new Error('Datos de usuario no encontrados');
 

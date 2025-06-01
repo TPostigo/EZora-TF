@@ -10,7 +10,7 @@
   justify-content: flex-end;
 }
 
-.cesta-flotante {
+.cesta-flotante-panel {
   background: #fff;
   width: 320px;
   height: 100%;
@@ -34,17 +34,32 @@
   cursor: pointer;
 }
 
+.cesta-titulo {
+  margin-top: 0;
+  color: #125961;
+  font-size: 1.5rem;
+  border-bottom: 2px solid #cf9f59;
+  padding-bottom: 0.5rem;
+}
+
+.cesta-vacia {
+  color: #125961;
+  margin-top: 2rem;
+}
+
 .cesta-lista {
   list-style: none;
   padding: 0;
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
 
 .cesta-item {
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.8rem;
 }
 
 .cesta-img {
@@ -58,5 +73,44 @@
   display: flex;
   flex-direction: column;
   font-size: 0.9rem;
+  color: #125961;
 }
 
+.cesta-nombre {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.cesta-precio {
+  color: #cf9f59;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.cesta-eliminar {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #a00;
+  cursor: pointer;
+  padding: 0 0.5rem;
+  margin-left: auto; /* Esto fuerza a que se coloque a la derecha */
+}
+
+.cesta-boton-pagar {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  margin: 1rem auto 0;
+  display: block;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.cesta-boton-pagar:hover {
+  background-color: #218838;
+}

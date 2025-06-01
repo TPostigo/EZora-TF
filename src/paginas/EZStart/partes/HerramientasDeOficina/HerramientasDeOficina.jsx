@@ -1,6 +1,10 @@
 // src/paginas/EZStart/partes/HerramientasDeOficina/HerramientasDeOficina.jsx
 import React from 'react';
 import './HerramientasDeOficina.css';
+import procText from './img/procText.png';
+import ojCalc from './img/ojCalc.png';
+import expAr from './img/expAr.png';
+import goDocs from './img/goDocs.png';
 
 function HerramientasDeOficina() {
   return (
@@ -31,7 +35,7 @@ function HerramientasDeOficina() {
           Puedes escribir, cambiar el tipo de letra, el color, el tamaño, alinear el texto, insertar imágenes o tablas, y guardar el documento.
         </p>
         <img
-          src="/imagenes/procesador-texto.png"
+          src={procText}
           alt="Ejemplo de procesador de texto"
           className="herramientas-imagen"
         />
@@ -51,7 +55,7 @@ function HerramientasDeOficina() {
           Cada hoja está dividida en columnas (letras) y filas (números). Puedes escribir texto o números y hacer operaciones automáticas, como sumar o calcular porcentajes.
         </p>
         <img
-          src="/imagenes/hoja-calculo.png"
+          src={ojCalc}
           alt="Ejemplo de hoja de cálculo"
           className="herramientas-imagen"
         />
@@ -68,7 +72,7 @@ function HerramientasDeOficina() {
           <li><strong>Exportar</strong> a otros formatos como PDF, muy útil si no quieres que se pueda editar.</li>
         </ul>
         <img
-          src="/imagenes/guardar-exportar.png"
+          src={expAr}
           alt="Cómo guardar o exportar archivos"
           className="herramientas-imagen"
         />
@@ -85,7 +89,7 @@ function HerramientasDeOficina() {
           <li>Todo se guarda automáticamente y puedes compartir los archivos con otras personas.</li>
         </ul>
         <img
-          src="/imagenes/google-docs.png"
+          src={goDocs}
           alt="Ejemplo de Google Docs"
           className="herramientas-imagen"
         />

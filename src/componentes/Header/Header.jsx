@@ -10,6 +10,9 @@ import perfilIcon from '../../Assets/Perfil.png';
 import cerrarSesion from '../../Assets/CerrarSesion.png';
 import cestaIcon from '../../Assets/Cesta.png';
 
+import { getAuth } from 'firebase/auth';
+import { obtenerCestaPorUsuario, eliminarProductoDeCesta } from '../../api/cestaService';
+
 function Header() {
   const navigate = useNavigate();
   const [mostrarMenuPerfil, setMostrarMenuPerfil] = useState(false);
@@ -28,9 +31,16 @@ function Header() {
   }, []);
 
   useEffect(() => {
-    const stored = localStorage.getItem('cesta');
-    if (stored) {
-      setProductosCesta(JSON.parse(stored));
+    const cargarCesta = async () => {
+      const user = getAuth().currentUser;
+      if (user) {
+        const productos = await obtenerCestaPorUsuario(user.uid);
+        setProductosCesta(productos);
+      }
+    };
+
+    if (mostrarCesta) {
+      cargarCesta();
     }
   }, [mostrarCesta]);
 
@@ -55,6 +65,17 @@ function Header() {
     setMostrarMenuPerfil(false);
   };
 
+  const eliminarProducto = async (producto) => {
+    const user = getAuth().currentUser;
+    if (!user) return;
+
+    await eliminarProductoDeCesta(user.uid, producto);
+    const nuevaCesta = productosCesta.filter(item => item.id !== producto.id);
+    setProductosCesta(nuevaCesta);
+  };
+
+  const totalCesta = productosCesta.reduce((total, item) => total + Number(item.precio), 0).toFixed(2);
+
   if (!isLoggedIn) return null;
 
   return (
@@ -75,24 +96,33 @@ function Header() {
         Skill Shop <img className="iconos" src={skillShopIcon} alt="Skill Shop" />
       </button>
 
-      <div className="cesta-container">
+      <div className="header-cesta-container">
         <button className="header-button" onClick={toggleCestaMenu}>
           <img className="iconos" src={cestaIcon} alt="Cesta" />
         </button>
         {mostrarCesta && (
-          <div className="cesta-menu-flotante">
+          <div className="header-cesta-menu">
             {productosCesta.length === 0 ? (
               <p style={{ padding: '1rem' }}>Tu cesta está vacía.</p>
             ) : (
-              productosCesta.map((producto, index) => (
-                <div key={index} className="cesta-item-flotante">
-                  <img src={producto.imagen} alt={producto.nombre} className="cesta-img-flotante" />
-                  <div>
-                    <p className="cesta-nombre">{producto.nombre}</p>
-                    <p className="cesta-precio">{producto.precio} €</p>
+              <>
+                {productosCesta.map((producto, index) => (
+                  <div key={index} className="header-cesta-item">
+                    <img src={producto.imagen} alt={producto.nombre} className="header-cesta-img" />
+                    <div>
+                      <p className="header-cesta-nombre">{producto.nombre}</p>
+                      <p className="header-cesta-precio">{producto.precio} €</p>
+                    </div>
+                    <button className="cesta-eliminar-btn" onClick={() => eliminarProducto(producto)}>×</button>
                   </div>
+                ))}
+                <div className="header-cesta-total">
+                  <strong className='precCest'>Total: {totalCesta} €</strong>
+                    <button className="cesta-pagar-btn" onClick={() => navigate('/checkout')}>
+                      Ir a pagar
+                  </button>
                 </div>
-              ))
+              </>
             )}
           </div>
         )}

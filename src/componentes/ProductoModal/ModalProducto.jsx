@@ -1,16 +1,27 @@
 // src/componentes/ModalProducto.jsx
 import React from 'react';
 import './ModalProducto.css';
+import { añadirProductoACesta } from '../../api/cestaService';
+import { getAuth } from 'firebase/auth';
 
 function ModalProducto({ producto, onClose }) {
   if (!producto) return null;
 
-  const añadirACesta = () => {
-    const cestaActual = JSON.parse(localStorage.getItem('cesta')) || [];
-    const nuevaCesta = [...cestaActual, producto];
-    localStorage.setItem('cesta', JSON.stringify(nuevaCesta));
-    alert(`${producto.nombre} añadido a la cesta`);
-    onClose();
+  const añadirACesta = async () => {
+    try {
+      const user = getAuth().currentUser;
+      if (!user) {
+        alert('Debes estar logueado para añadir productos.');
+        return;
+      }
+
+      await añadirProductoACesta(producto);
+      alert(`${producto.nombre} añadido a la cesta`);
+      onClose();
+    } catch (error) {
+      console.error('Error al añadir a la cesta:', error);
+      alert('Hubo un problema al añadir el producto.');
+    }
   };
 
   return (

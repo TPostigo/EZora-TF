@@ -1,6 +1,13 @@
 // src/paginas/EZStart/partes/CorreoElectronico/CorreoElectronico.jsx
 import React from 'react';
 import './CorreoElectronico.css';
+import crearCuen from './img/crearCuen.png';
+import inicSes from './img/inicSes.png';
+import escrCorr from './img/escrCorr.png';
+import adjAr from './img/adjAr.png';
+import bandEntr from './img/bandEntr.png';
+import buscCorreo from './img/buscCorreo.png';
+import cerrSes from './img/cerrSes.png';
 
 function CorreoElectronico() {
   return (
@@ -29,7 +36,7 @@ function CorreoElectronico() {
           Haz clic en “Crear cuenta” y sigue los pasos. Tendrás que escribir tu nombre, elegir una dirección como <i>juan123@gmail.com</i>, y crear una contraseña segura.
         </p>
         <img
-          src="/imagenes/crear-cuenta-gmail.png"
+          src={crearCuen}
           alt="Ejemplo: Crear cuenta en Gmail"
           className="correo-imagen"
         />
@@ -41,7 +48,7 @@ function CorreoElectronico() {
           Entra en la web del servicio (por ejemplo, <strong>www.gmail.com</strong>) y escribe tu dirección de correo y tu contraseña. Haz clic en "Iniciar sesión".
         </p>
         <img
-          src="/imagenes/iniciar-sesion.png"
+          src={inicSes}
           alt="Pantalla de inicio de sesión"
           className="correo-imagen"
         />
@@ -58,7 +65,7 @@ function CorreoElectronico() {
           <li>Pulsa el botón “Enviar”.</li>
         </ul>
         <img
-          src="/imagenes/redactar-correo.png"
+          src={escrCorr}
           alt="Ejemplo: redacción de un nuevo correo"
           className="correo-imagen"
         />
@@ -74,7 +81,7 @@ function CorreoElectronico() {
           <li>Verás el archivo cargado en el correo. Pulsa “Enviar”.</li>
         </ul>
         <img
-          src="/imagenes/adjuntar-archivo.png"
+          src={adjAr}
           alt="Cómo adjuntar un archivo"
           className="correo-imagen"
         />
@@ -86,7 +93,7 @@ function CorreoElectronico() {
           Los correos nuevos aparecen en la bandeja de entrada. Para leer uno, solo tienes que hacer clic sobre él.
         </p>
         <img
-          src="/imagenes/bandeja-entrada.png"
+          src={bandEntr}
           alt="Vista de la bandeja de entrada"
           className="correo-imagen"
         />
@@ -102,7 +109,7 @@ function CorreoElectronico() {
           <li><strong>Buscar:</strong> Usa la barra de búsqueda para encontrar correos antiguos.</li>
         </ul>
         <img
-          src="/imagenes/organizar-correo.png"
+          src={buscCorreo}
           alt="Opciones para organizar correos"
           className="correo-imagen"
         />
@@ -115,7 +122,7 @@ function CorreoElectronico() {
           Haz clic en tu foto o inicial (arriba a la derecha) y selecciona “Cerrar sesión” o “Salir”.
         </p>
         <img
-          src="/imagenes/cerrar-sesion.png"
+          src={cerrSes}
           alt="Cómo cerrar sesión de tu correo"
           className="correo-imagen"
         />

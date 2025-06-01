@@ -1,6 +1,11 @@
 // src/paginas/EZStart/partes/NavegacionInternet/NavegacionInternet.jsx
 import React from 'react';
 import './NavegacionInternet.css';
+import nave from './img/nave.png';
+import busqGo from './img/busqGo.png';
+import pesta from './img/pesta.png';
+import favo from './img/favo.png';
+import url from './img/url.png';
 
 function NavegacionInternet() {
   return (
@@ -22,7 +27,7 @@ function NavegacionInternet() {
           <li><strong>Safari</strong> (en dispositivos Apple)</li>
         </ul>
         <img
-          src="/imagenes/tipos-navegadores.png"
+          src={nave}
           alt="Ejemplos de navegadores web"
           className="navegacion-imagen"
         />
@@ -42,7 +47,7 @@ function NavegacionInternet() {
           <li><strong>DuckDuckGo</strong>: www.duckduckgo.com</li>
         </ul>
         <img
-          src="/imagenes/busqueda-google.png"
+          src={busqGo}
           alt="Ejemplo de búsqueda en Google"
           className="navegacion-imagen"
         />
@@ -55,7 +60,7 @@ function NavegacionInternet() {
           Cada nueva pestaña es como una nueva ventana.
         </p>
         <img
-          src="/imagenes/abrir-pestanas.png"
+          src={pesta}
           alt="Cómo abrir pestañas en el navegador"
           className="navegacion-imagen"
         />
@@ -70,7 +75,7 @@ function NavegacionInternet() {
           Esa página se guardará como "Favorito" o "Marcador", y podrás volver a ella fácilmente desde el menú de marcadores.
         </p>
         <img
-          src="/imagenes/guardar-favoritos.png"
+          src={favo}
           alt="Guardar una página como favorito"
           className="navegacion-imagen"
         />
@@ -83,7 +88,7 @@ function NavegacionInternet() {
           Si la escribes en la barra superior y pulsas <strong>Enter</strong>, irás directamente a esa página.
         </p>
         <img
-          src="/imagenes/url-ejemplo.png"
+          src={url}
           alt="Ejemplo de una URL en la barra del navegador"
           className="navegacion-imagen"
         />

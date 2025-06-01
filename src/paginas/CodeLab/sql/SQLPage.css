@@ -1,0 +1,83 @@
+.sqlpage-container {
+  padding: 2rem;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #fffdf7;
+}
+
+.sqlpage-ejercicio {
+  border: 2px solid #cf9f59;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  background-color: #ffffff;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.05);
+}
+
+.sqlpage-ejercicio h3 {
+  margin-top: 0;
+  color: #116864;
+}
+
+.sqlpage-instruccion {
+  background-color: #fffceb;
+  border-left: 4px solid #cf9f59;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  font-family: monospace;
+  white-space: pre-wrap;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.sqlpage-tabla {
+  margin-top: 1rem;
+  overflow-x: auto;
+}
+
+.sqlpage-tabla table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: monospace;
+  font-size: 0.95rem;
+}
+
+.sqlpage-tabla th,
+.sqlpage-tabla td {
+  border: 1px solid #dcae4a;
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+}
+
+.sqlpage-tabla th {
+  background-color: #f9f0d3;
+  color: #333;
+}
+
+.sqlpage-tabla td {
+  background-color: #fefcf6;
+  color: #444;
+}
+
+.sqlpage-titulo-bloque {
+  color: #116864;
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.sqlpage-instruccion-inicial {
+  background-color: #f1fbe9;
+  border-left: 6px solid #3f8d50;
+  padding: 1rem 1.2rem;
+  border-radius: 8px;
+  font-family: monospace;
+  white-space: pre-wrap;
+  color: #2f4f2f;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.sqlpage-explicacion {
+  color: #555;
+  font-style: italic;
+  margin: 0.5rem 0 0.8rem;
+}

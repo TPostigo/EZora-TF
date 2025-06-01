@@ -16,6 +16,13 @@ import SeguridadEnLaRed from './paginas/EZStart/partes/SeguridadEnLaRed/Segurida
 import HerramientasDeOficina from './paginas/EZStart/partes/HerramientasDeOficina/HerramientasDeOficina';
 import PerfilUsuario from './paginas/Perfil/PerfilUsuario';
 import SkillShop from './paginas/SkillShop/SkillShop';
+import PythonPage from './paginas/CodeLab/python/PythonPage';
+import JavaScriptPage from './paginas/CodeLab/javascript/JavaScriptPage';
+import HtmlPage from './paginas/CodeLab/html/HtmlPage';
+import SQLPage from './paginas/CodeLab/sql/SQLPage';
+import Checkout from './paginas/Checkout/Checkout';
+
+
 
 
 function App() {
@@ -147,6 +154,63 @@ function App() {
             </>
           }
         />
+        <Route
+          path="/codelab/python"
+          element={
+            <>
+              <Header />
+                <ProtectedRoute>
+              <PythonPage />
+              </ProtectedRoute>
+            </>
+          }
+        />
+
+        <Route
+          path="/codelab/javascript"
+          element={
+          <>
+            <Header />
+              <ProtectedRoute>
+              <JavaScriptPage />
+            </ProtectedRoute>
+          </>
+          }
+        />
+        <Route
+          path="/codelab/html"
+          element={
+            <>
+              <Header />
+              <ProtectedRoute>
+                <HtmlPage />
+              </ProtectedRoute>
+            </>
+          }
+        />
+        <Route
+          path="/codelab/sql"
+          element={
+            <>
+              <Header />
+              <ProtectedRoute>
+                <SQLPage />
+              </ProtectedRoute>
+            </>
+          }
+        />
+        <Route
+          path="/checkout"
+          element={
+          <>
+            <Header />
+            <ProtectedRoute>
+              <Checkout />
+            </ProtectedRoute>
+          </>
+          }
+        />
+
 
       </Routes>
     </Router>

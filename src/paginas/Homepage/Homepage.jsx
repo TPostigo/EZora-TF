@@ -1,44 +1,31 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Homepage.css';
 
 function Homepage() {
   const navigate = useNavigate();
-  const [mensaje, setMensaje] = useState('');
   const user = JSON.parse(localStorage.getItem('user'));
-
-  useEffect(() => {
-    fetch('/api/mensaje')
-      .then((res) => res.json())
-      .then((data) => setMensaje(data.mensaje))
-      .catch((err) => console.error('Error al conectar con el backend:', err));
-  }, []);
 
   return (
     <div className="homepage-container">
-      <h1>¡Bienvenido, {user?.email || 'usuario'}!</h1>
-      <p className="homepage-intro">
-        Explora nuestras secciones para aprender habilidades digitales útiles, mejorar tus conocimientos y acceder a cursos de calidad.
-      </p>
+      <h1 className="homepage-titulo">¡Bienvenido, {user?.email || 'usuario'}!</h1>
+      <h3 className='homepage-descripcion'>EZora es una plataforma para aprender informática, programación y desarrollar habilidades digitales de forma sencilla y práctica.</h3>
 
-      <div className="homepage-cards">
-        <div className="homepage-card" onClick={() => navigate('/ezstart')}>
+      <div className="homepage-grid">
+        <div className="homepage-card card-ezstart" onClick={() => navigate('/ezstart')}>
           <h3>EZStart</h3>
-          <p>Aprende lo básico del ordenador y la red.</p>
+          <p className="card-description">Aprende lo básico del ordenador y la red.</p>
         </div>
-        <div className="homepage-card" onClick={() => navigate('/codelab')}>
-          <h3>Code Lab</h3>
-          <p>Practica programación y lógica paso a paso.</p>
-        </div>
-        <div className="homepage-card" onClick={() => navigate('/skillshop')}>
-          <h3>Skill Shop</h3>
-          <p>Accede a cursos y recursos exclusivos.</p>
-        </div>
-      </div>
 
-      <div className="homepage-back-msg">
-        <p>Mensaje desde el backend:</p>
-        <strong>{mensaje}</strong>
+        <div className="homepage-card card-codelab" onClick={() => navigate('/codelab')}>
+          <h3>Code Lab</h3>
+          <p className="card-description">Practica programación y lógica paso a paso.</p>
+        </div>
+
+        <div className="homepage-card card-skillshop" onClick={() => navigate('/skillshop')}>
+          <h3>Skill Shop</h3>
+          <p className="card-description">Accede a cursos y recursos exclusivos.</p>
+        </div>
       </div>
     </div>
   );

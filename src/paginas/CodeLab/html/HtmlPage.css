@@ -1,0 +1,103 @@
+/* src/paginas/CodeLab/html/HTMLPage.css */
+
+.htmlpage-layout {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  margin-left: 2rem;
+  flex-wrap: wrap;
+}
+
+.htmlpage-ejercicios {
+  width: 600px;
+  max-width: 100%;
+  background: #fffdf7;
+  border: 2px solid #cf9f59;
+  border-radius: 10px;
+  padding: 1rem;
+  font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
+}
+
+.htmlpage-ejercicios h3 {
+  color: #cf9f59;
+  margin-bottom: 1rem;
+}
+
+.htmlpage-ejercicios ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.htmlpage-ejercicio-item {
+  cursor: pointer;
+  padding: 0.5rem;
+  margin-bottom: 0.8rem;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+
+.htmlpage-ejercicio-item:hover {
+  background-color: #125961;
+  color: white;
+}
+
+.htmlpage-ejercicio-activo {
+  background-color: #cf9f59;
+  color: white;
+  font-weight: bold;
+}
+
+.htmlpage-enunciado {
+  background-color: #fffceb;
+  border-left: 4px solid #cf9f59;
+  padding: 0.6rem 0.9rem;
+  margin-top: 0.5rem;
+  border-radius: 6px;
+  font-family: 'Montserrat', sans-serif;
+  color: #333;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.htmlpage-consola {
+  flex: 1;
+  min-width: 300px;
+  max-width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+/* RESPONSIVE TABLET Y MÓVIL */
+@media (max-width: 768px) {
+  .htmlpage-layout {
+    flex-direction: column;
+    margin-left: 0;
+    padding: 1.5rem 1rem;
+  }
+
+  .htmlpage-ejercicios,
+  .htmlpage-consola {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .htmlpage-layout {
+    padding: 1rem;
+    gap: 1.2rem;
+  }
+
+  .htmlpage-ejercicio-item {
+    font-size: 0.95rem;
+  }
+
+  .htmlpage-consola {
+    padding: 0.8rem;
+  }
+
+  .htmlpage-enunciado {
+    font-size: 0.85rem;
+  }
+}
