@@ -1,0 +1,66 @@
+.gestion-productos-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #125961;
+}
+
+.producto-item {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  background-color: #f9f9f9;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.producto-item p {
+  margin: 0.3rem 0;
+}
+
+.producto-item img {
+  display: block;
+  max-width: 100px;
+  height: auto;
+  margin: 0.5rem 0;
+  border-radius: 6px;
+}
+
+.producto-item input {
+  width: 100%;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.producto-item button {
+  margin-right: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #125961;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.producto-item button:hover {
+  background-color: #0b3f44;
+}
+
+.producto-item button.eliminar {
+  background-color: #c0392b;
+}
+
+.producto-item button.eliminar:hover {
+  background-color: #922b21;
+}

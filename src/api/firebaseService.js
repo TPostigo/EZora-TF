@@ -1,6 +1,10 @@
 // src/api/firebaseService.js
 import { doc, setDoc, getDoc } from 'firebase/firestore';
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  getIdTokenResult
+} from 'firebase/auth';
 import { db, auth } from '../firebaseConfig';
 
 // Registrar un nuevo usuario
@@ -12,7 +16,7 @@ export const registrarUsuario = async (email, password) => {
     // Guardar info del usuario
     await setDoc(doc(db, 'usuarios', user.uid), { email });
 
-    // 🛒 Crear cesta vacía
+    // Crear cesta vacía
     await setDoc(doc(db, 'cestas', user.uid), { productos: [] });
 
     return user;
@@ -28,6 +32,10 @@ export const loginUsuario = async (email, password) => {
     const userCredential = await signInWithEmailAndPassword(auth, email, password);
     const user = userCredential.user;
 
+    // Obtener los custom claims para saber si es admin
+    const tokenResult = await getIdTokenResult(user);
+    const isAdmin = !!tokenResult.claims.admin;
+
     // Obtener información adicional del usuario desde Firestore
     const userDoc = await getDoc(doc(db, 'usuarios', user.uid));
     if (!userDoc.exists()) throw new Error('Datos de usuario no encontrados');
@@ -35,6 +43,7 @@ export const loginUsuario = async (email, password) => {
     return {
       uid: user.uid,
       email: user.email,
+      isAdmin, // Este valor es el que se usa luego en localStorage
       ...userDoc.data()
     };
   } catch (error) {

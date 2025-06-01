@@ -1,0 +1,46 @@
+/* src/paginas/Admin/AddProducto.css */
+
+.add-product-container {
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: #fff;
+  border: 2px solid #cf9f59;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Montserrat', sans-serif;
+}
+
+.add-product-container h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #125961;
+}
+
+.add-product-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.add-product-container input {
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.add-product-container button {
+  padding: 0.9rem;
+  background-color: #125961;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.add-product-container button:hover {
+  background-color: #0f4d4d;
+}
